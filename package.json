@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Hunter Chang",
   "dependencies": {
-    "gatsby": "^1.9.235",
+    "gatsby": "^2.1.1",
     "gatsby-link": "^1.6.39",
     "gatsby-image": "^1.0.42",
     "gatsby-plugin-google-analytics": "^1.0.24",
@@ -16,7 +16,8 @@
     "gatsby-source-filesystem": "^1.5.27",
     "gatsby-transformer-remark": "^1.7.37",
     "gatsby-transformer-sharp": "^1.6.22",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "snyk": "^1.437.3"
   },
   "homepage": "https://github.com/ChangoMan/gatsby-starter-forty",
   "keywords": [
@@ -34,6 +35,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
-  }
+    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
